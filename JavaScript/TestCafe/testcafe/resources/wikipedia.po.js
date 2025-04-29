@@ -2,7 +2,7 @@ import { Selector } from 'testcafe'
 
 export const basicUrl = 'https://www.wikipedia.org'
 export const englishUrl = 'https://en.wikipedia.org/wiki/Main_Page'
-export const welkomsttekst = 'h1 > span.mw-headline'
+export const welkomsttekst = 'h1#Welcome_to_Wikipedia'
 export const titeltekst = 'h1.firstHeading > span'
 
 export const checkZichtbaarheidEnInhoudVanVeld = async (t, cssSelector, tekst) => {
@@ -11,8 +11,8 @@ export const checkZichtbaarheidEnInhoudVanVeld = async (t, cssSelector, tekst) =
 }
 
 export const typeInZoekveldEnKlikOpZoeken = async (t, zoekterm) => {
-    const zoekveld = Selector('#searchInput[aria-label="Search Wikipedia"]')
-    const zoekknop = Selector('button').withText('Search')
+    const zoekveld = Selector('input[aria-label="Search Wikipedia"]').nth(0)
+    const zoekknop = Selector('form#searchform button')
     await t.typeText(zoekveld, zoekterm)
     await t.click(zoekknop)
 }
