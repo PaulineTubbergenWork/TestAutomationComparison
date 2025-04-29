@@ -50,3 +50,8 @@ installeren van browsers: \
 
 **TODO**
 Manier vinden om RobotFramework rapportage-bestanden in nette map te stoppen in plaats van overal verspreid.
+
+**TODO**
+Wikipedia heeft zichzelf in de tussentijd aangepast, en test is nu flaky zelfs na aanpassingen door raar gedrag zoekknop.
+Cypress en TestCafe al aangepast, rest nog niet.
+Mogelijk tests op https://automationexercise.com/ richten ipv wikipedia, meer zekerheid dat dit hetzelfde blijft?
