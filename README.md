@@ -50,8 +50,17 @@ installeren van browsers: \
 
 **TODO**
 Manier vinden om RobotFramework rapportage-bestanden in nette map te stoppen in plaats van overal verspreid.
+Poetry toevoegen?
+Docker toevoegen?
 
 **TODO**
 Wikipedia heeft zichzelf in de tussentijd aangepast, en test is nu flaky zelfs na aanpassingen door raar gedrag zoekknop.
 Cypress en TestCafe al aangepast, rest nog niet.
-Mogelijk tests op https://automationexercise.com/ richten ipv wikipedia, meer zekerheid dat dit hetzelfde blijft?
+Mogelijk tests op demowebsite richten ipv wikipedia, meer zekerheid dat dit hetzelfde blijft?
+Mogelijke demowebsites:
+https://petstore.swagger.io/ \
+https://www.demoblaze.com/ \
+https://parabank.parasoft.com/parabank/index.htm \
+https://www.saucedemo.com/ \
+https://petstore.octoperf.com/actions/Catalog.action \
+https://github.com/cypress-io/cypress-realworld-app
