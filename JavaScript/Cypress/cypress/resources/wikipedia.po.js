@@ -1,4 +1,3 @@
-export const basicUrl = 'https://www.wikipedia.org'
 export const englishUrl = 'https://en.wikipedia.org/wiki/Main_Page'
 export const welkomsttekst = 'h1#Welcome_to_Wikipedia'
 export const titeltekst = 'h1.firstHeading > span'

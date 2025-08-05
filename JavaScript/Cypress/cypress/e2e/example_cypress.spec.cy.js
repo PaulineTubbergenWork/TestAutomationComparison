@@ -1,16 +1,14 @@
-import { basicUrl, checkZichtbaarheidEnInhoudVanVeld, englishUrl, klikKnopOmZoekveldTeOpenen, titeltekst, typeInZoekveldEnKlikOpZoeken, welkomsttekst } from '../resources/wikipedia.po'
+import { checkZichtbaarheidEnInhoudVanVeld, englishUrl, klikKnopOmZoekveldTeOpenen, titeltekst, typeInZoekveldEnKlikOpZoeken, welkomsttekst } from '../resources/wikipedia.po'
 
 const zoekterm = 'Platypus'
 
 describe('Wikipedia', () => {
-  it('checks that I can visit wikipedia', () => {
-    cy.visit('https://www.wikipedia.org')
+  beforeEach(() => {
+    cy.log('go to the English Wikipedia page')
+    cy.visit(englishUrl)
   })
 
   it('checks that I can find the Platypus page on the English Wikipedia', () => {
-    cy.log('go to the English Wikipedia page')
-    cy.visit('https://en.wikipedia.org/wiki/Main_Page')
-
     cy.log('check that the page is in English')
     cy.get('h1#Welcome_to_Wikipedia').should('be.visible')
     cy.get('h1#Welcome_to_Wikipedia').should('contain.text', 'Welcome to')
@@ -26,8 +24,6 @@ describe('Wikipedia', () => {
   })
 
   it('checks that I can find the Platypus page on the English Wikipedia, now with custom functions', () => {
-    cy.log('go to the English Wikipedia page')
-    cy.visit(englishUrl)
     cy.log('check that the page is in English')
     checkZichtbaarheidEnInhoudVanVeld(welkomsttekst, 'Welcome to')
     cy.log('search for the Platypus')
@@ -38,10 +34,8 @@ describe('Wikipedia', () => {
   })
 
   it('fails on purpose', () => {
-    cy.log('go to the English Wikipedia page')
-    cy.visit(englishUrl)
     cy.log('check that the page is in English')
-    // inhoud tekst is expres fout
+    // inhoud tekst is wrong on purpose
     checkZichtbaarheidEnInhoudVanVeld(welkomsttekst, 'Welcom to')
     cy.log('search for the Platypus')
     klikKnopOmZoekveldTeOpenen()
