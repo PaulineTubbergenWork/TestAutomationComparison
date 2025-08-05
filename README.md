@@ -52,6 +52,7 @@ installeren van browsers: \
 Manier vinden om RobotFramework rapportage-bestanden in nette map te stoppen in plaats van overal verspreid.
 Poetry toevoegen?
 Docker toevoegen?
+Dingen zijn nu afwisselend Engels en Nederlands, dat is onhandig. Fixen.
 
 **TODO**
 Wikipedia heeft zichzelf in de tussentijd aangepast, en test is nu flaky zelfs na aanpassingen door raar gedrag zoekknop.
