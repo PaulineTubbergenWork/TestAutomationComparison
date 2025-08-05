@@ -1,19 +1,23 @@
 import { expect } from '@playwright/test'
 
 export const englishUrl = 'https://en.wikipedia.org/wiki/Main_Page'
-export const welkomsttekst = 'css=h1 > span.mw-headline'
-export const titeltekst = 'css=h1.firstHeading > span'
+export const welcomeText = 'css=h1#Welcome_to_Wikipedia'
+export const titleText = 'css=h1.firstHeading > span'
 
 export const openUrlInBrowser = async (page, url) => await page.goto(url)
 
-export const checkZichtbaarheidEnInhoudVanVeld = async (page, cssSelector, tekst) => {
+export const checkFieldVisibilityAndContent = async (page, cssSelector, text) => {
     await expect(page.locator(cssSelector)).toBeVisible()
-    await expect(page.locator(cssSelector)).toContainText(tekst)
+    await expect(page.locator(cssSelector)).toContainText(text)
 }
 
-export const typeInZoekveldEnKlikOpZoeken = async (page, zoekterm) => {
-    const zoekveld = 'css=#searchInput[aria-label="Search Wikipedia"]'
-    const zoekknop = "xpath=//button[text()='Search']"
-    await page.locator(zoekveld).fill(zoekterm)
-    await page.locator(zoekknop).click()
+export const clickButtonToOpenSearchField = async (page) => {
+    await page.locator('#p-search a').click();
+}
+
+export const typeTextInSearchFieldAndClickSearchButton = async (page, searchTerm) => {
+    const searchField = 'css=input[aria-label="Search Wikipedia"]'
+    const searchButton = 'css=form#searchform button'
+    await page.locator(searchField).fill(searchTerm)
+    await page.locator(searchButton).click()
 }
