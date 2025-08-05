@@ -1,6 +1,6 @@
-import { checkZichtbaarheidEnInhoudVanVeld, englishUrl, klikKnopOmZoekveldTeOpenen, titeltekst, typeInZoekveldEnKlikOpZoeken, welkomsttekst } from '../resources/wikipedia.po'
+import { checkFieldVisibilityAndContent, clickButtonToOpenSearchField, englishUrl, titleText, typeTextInSearchFieldAndClickSearchButton, welcomeText } from '../resources/wikipedia.po'
 
-const zoekterm = 'Platypus'
+const searchTerm = 'Platypus'
 
 describe('Wikipedia', () => {
   beforeEach(() => {
@@ -25,22 +25,22 @@ describe('Wikipedia', () => {
 
   it('checks that I can find the Platypus page on the English Wikipedia, now with custom functions', () => {
     cy.log('check that the page is in English')
-    checkZichtbaarheidEnInhoudVanVeld(welkomsttekst, 'Welcome to')
+    checkFieldVisibilityAndContent(welcomeText, 'Welcome to')
     cy.log('search for the Platypus')
-    klikKnopOmZoekveldTeOpenen()
-    typeInZoekveldEnKlikOpZoeken(zoekterm)
+    clickButtonToOpenSearchField()
+    typeTextInSearchFieldAndClickSearchButton(searchTerm)
     cy.log('check that the Platypus page was found')
-    checkZichtbaarheidEnInhoudVanVeld(titeltekst, zoekterm)
+    checkFieldVisibilityAndContent(titleText, searchTerm)
   })
 
   it('fails on purpose', () => {
     cy.log('check that the page is in English')
     // inhoud tekst is wrong on purpose
-    checkZichtbaarheidEnInhoudVanVeld(welkomsttekst, 'Welcom to')
+    checkFieldVisibilityAndContent(welcomeText, 'Welcom to')
     cy.log('search for the Platypus')
-    klikKnopOmZoekveldTeOpenen()
-    typeInZoekveldEnKlikOpZoeken(zoekterm)
+    clickButtonToOpenSearchField()
+    typeTextInSearchFieldAndClickSearchButton(searchTerm)
     cy.log('check that the Platypus page was found')
-    checkZichtbaarheidEnInhoudVanVeld(titeltekst, zoekterm)
+    checkFieldVisibilityAndContent(titleText, searchTerm)
   })
 })
