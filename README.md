@@ -56,7 +56,6 @@ Dingen zijn nu afwisselend Engels en Nederlands, dat is onhandig. Fixen.
 
 **TODO**
 Wikipedia heeft zichzelf in de tussentijd aangepast, en test is nu flaky zelfs na aanpassingen door raar gedrag zoekknop.
-Cypress en TestCafe al aangepast, rest nog niet.
 Mogelijk tests op demowebsite richten ipv wikipedia, meer zekerheid dat dit hetzelfde blijft?
 Mogelijke demowebsites:
 https://petstore.swagger.io/ \
