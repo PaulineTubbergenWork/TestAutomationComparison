@@ -1,7 +1,7 @@
 **Stappen om werkend te krijgen**
 
 Python versie 3.11, in venv
-(automatisch aangemaakt bij openen project in PyCharm, PythonPlayWrightEnSelenium en RobotFramework hebben ieder een aparte venv nodig). \
+(automatisch aangemaakt bij openen project in PyCharm, Python en RobotFramework hebben ieder een aparte venv nodig). \
 Pip versie 23.3.1, als nog niet up-to-date: \
 <code>pip install --upgrade pip</code> \
 Node versie 21.1.0. \

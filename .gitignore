@@ -1,5 +1,5 @@
 .idea/
-/PythonPlayWrightEnSelenium/tests/.pytest_cache/
+/Python/tests/.pytest_cache/
 /pytest_cache
 .DS_Store
 *.html
