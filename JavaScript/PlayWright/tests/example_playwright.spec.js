@@ -1,13 +1,9 @@
 import { test } from '@playwright/test'
-import { basicUrl, checkZichtbaarheidEnInhoudVanVeld, englishUrl, openUrlInBrowser, titeltekst, typeInZoekveldEnKlikOpZoeken, welkomsttekst } from '../resources/wikipedia.po'
+import { checkZichtbaarheidEnInhoudVanVeld, englishUrl, openUrlInBrowser, titeltekst, typeInZoekveldEnKlikOpZoeken, welkomsttekst } from '../resources/wikipedia.po'
 
 const zoekterm = "Platypus"
 
 test.describe('Wikipedia', () => {
-  test('checks that I can visit wikipedia', async ({page}) => {
-    await openUrlInBrowser(page, basicUrl)
-  })
-
   test('Checks that I can find the Platypus page on the English Wikipedia', async ({page}) => {
     console.log("Go to the English Wikipedia page")
     await openUrlInBrowser(page, englishUrl)

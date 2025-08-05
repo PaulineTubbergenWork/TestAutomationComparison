@@ -1,6 +1,5 @@
 import { expect } from '@playwright/test'
 
-export const basicUrl = 'https://www.wikipedia.org'
 export const englishUrl = 'https://en.wikipedia.org/wiki/Main_Page'
 export const welkomsttekst = 'css=h1 > span.mw-headline'
 export const titeltekst = 'css=h1.firstHeading > span'

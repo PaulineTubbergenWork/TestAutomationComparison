@@ -1,14 +1,7 @@
-import { checkZichtbaarheidEnInhoudVanVeld, welkomsttekst, typeInZoekveldEnKlikOpZoeken, titeltekst, basicUrl, klikKnopOmZoekveldTeOpenen } from "../resources/wikipedia.po"
+import { checkZichtbaarheidEnInhoudVanVeld, welkomsttekst, typeInZoekveldEnKlikOpZoeken, titeltekst, klikKnopOmZoekveldTeOpenen } from "../resources/wikipedia.po"
 import { Selector } from 'testcafe'
 
 const zoekterm = 'Platypus'
-
-fixture('Getting Started')
-    .page(basicUrl);
-
-test('Checks that I can visit Wikipedia', async t => {
-    console.log('test has been reached');
-});
 
 fixture('Wikipedia')
     .page('https://en.wikipedia.org/wiki/Main_Page')
