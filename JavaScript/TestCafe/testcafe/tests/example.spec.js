@@ -1,7 +1,7 @@
-import { checkZichtbaarheidEnInhoudVanVeld, welkomsttekst, typeInZoekveldEnKlikOpZoeken, titeltekst, klikKnopOmZoekveldTeOpenen } from "../resources/wikipedia.po"
+import { checkFieldVisibilityAndContent, clickButtonToOpenSearchField, titleText, typeTextInSearchFieldAndClickSearchButton, welcomeText } from "../resources/wikipedia.po"
 import { Selector } from 'testcafe'
 
-const zoekterm = 'Platypus'
+const searchTerm = 'Platypus'
 
 fixture('Wikipedia')
     .page('https://en.wikipedia.org/wiki/Main_Page')
@@ -25,20 +25,20 @@ test('Checks that I can find the Platypus page on the English Wikipedia', async 
 test('Checks that I can find the Platypus page on the English Wikipedia, now with custom functions', async t => {
     console.log("Go to the English Wikipedia page")
     console.log("Check that the page is in English")
-    await checkZichtbaarheidEnInhoudVanVeld(t, welkomsttekst, 'Welcome to')
+    await checkFieldVisibilityAndContent(t, welcomeText, 'Welcome to')
     console.log("Search for the Platypus")
-    await typeInZoekveldEnKlikOpZoeken(t, zoekterm)
+    await typeTextInSearchFieldAndClickSearchButton(t, searchTerm)
     console.log("Check that the Platypus page was found")
-    await checkZichtbaarheidEnInhoudVanVeld(t, titeltekst, zoekterm)
+    await checkFieldVisibilityAndContent(t, titleText, searchTerm)
 })
 
 test('Fails on purpose', async t => {
     console.log("Go to the English Wikipedia page")
     console.log("Check that the page is in English")
-    // inhoud tekst is expres fout
-    await checkZichtbaarheidEnInhoudVanVeld(t, welkomsttekst, 'Welcom to')
+    // text content is wrong on purpose
+    await checkFieldVisibilityAndContent(t, welcomeText, 'Welcom to')
     console.log("Search for the Platypus")
-    await typeInZoekveldEnKlikOpZoeken(t, zoekterm)
+    await typeTextInSearchFieldAndClickSearchButton(t, searchTerm)
     console.log("Check that the Platypus page was found")
-    await checkZichtbaarheidEnInhoudVanVeld(t, titeltekst, zoekterm)
+    await checkFieldVisibilityAndContent(t, titleText, searchTerm)
 })
