@@ -1,5 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions
 from resources.wikipedia_variables import english_url, welcome_text, title_text
 from resources.wikipedia_selenium import open_url_in_browser, check_field_visibility_and_content, \
     type_text_in_search_field_and_click_search_button
@@ -12,14 +14,19 @@ def test_checks_that_i_can_find_the_platypus_page_on_the_english_wikipedia():
     print("go to the English Wikipedia page")
     browser_chrome.get("https://en.wikipedia.org/wiki/Main_Page")
     print("checks that the page is in English")
-    selector = browser_chrome.find_element(By.CSS_SELECTOR, "h1 > span.mw-headline")
-    assert selector.is_displayed() == True
-    assert "Welcome to" in selector.text
+    WebDriverWait(browser_chrome, 10).until(
+        expected_conditions.text_to_be_present_in_element((By.CSS_SELECTOR, "h1#Welcome_to_Wikipedia"), "Welcome to")
+    )
+    assert browser_chrome.find_element(By.CSS_SELECTOR, "h1#Welcome_to_Wikipedia").is_displayed() == True
+    assert "Welcome to" in browser_chrome.find_element(By.CSS_SELECTOR, "h1#Welcome_to_Wikipedia").text
     print("search for the Platypus")
-    assert browser_chrome.find_element(By.CSS_SELECTOR, "#input[aria-label='Search Wikipedia']").is_displayed()
-    browser_chrome.find_element(By.CSS_SELECTOR, "#input[aria-label='Search Wikipedia']").send_keys("Platypus")
+    assert browser_chrome.find_element(By.CSS_SELECTOR, "input[aria-label='Search Wikipedia']").is_displayed()
+    browser_chrome.find_element(By.CSS_SELECTOR, "input[aria-label='Search Wikipedia']").send_keys("Platypus")
     browser_chrome.find_element(By.CSS_SELECTOR, "form#searchform button").click()
     print("check that the Platypus page was found")
+    WebDriverWait(browser_chrome, 10).until(
+        expected_conditions.text_to_be_present_in_element((By.CSS_SELECTOR, "h1.firstHeading > span"), "Platypus")
+    )
     assert browser_chrome.find_element(By.CSS_SELECTOR, "h1.firstHeading > span").is_displayed() == True
     assert "Platypus" in browser_chrome.find_element(By.CSS_SELECTOR, "h1.firstHeading > span").text
     browser_chrome.close()
