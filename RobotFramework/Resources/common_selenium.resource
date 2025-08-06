@@ -8,12 +8,12 @@ Open url in browser
     [Arguments]    ${url}
     Open browser    ${url}    ${BROWSER_SELENIUM}
     
-Check zichtbaarheid en inhoud van veld
-    [Arguments]    ${css_selector}    ${tekst}
+Check field visibility and content
+    [Arguments]    ${css_selector}    ${text}
     Element Should Be Visible   ${css_selector}
-    Element Text Should Be   ${css_selector}    ${tekst}
+    Element Text Should Be   ${css_selector}    ${text}
     
-Type in zoekveld en klik op zoekknop
-    [Arguments]    ${tekst}
-    Input Text     ${ZOEKVELD}    ${tekst}
-    Click Button    ${ZOEKKNOP}
+Type text in search field and click search button
+    [Arguments]    ${text}
+    Input Text     ${SEARCH_FIELD}    ${text}
+    Click Button    ${SEARCH_BUTTON}

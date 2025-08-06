@@ -11,12 +11,12 @@ Open url in browser
     New Browser     ${BROWSER_PLAYWRIGHT}     ${HEADLESS}
     New Page        ${url}
 
-Check zichtbaarheid en inhoud van veld
-    [Arguments]    ${css_selector}    ${tekst}
+Check field visibility and content
+    [Arguments]    ${css_selector}    ${text}
     Get Element States    ${css_selector}    validate    visible
-    Get Text    ${css_selector}    ==    ${tekst}
+    Get Text    ${css_selector}    ==    ${text}
 
-Type in zoekveld en klik op zoekknop
-    [Arguments]    ${tekst}
-    Type Text    ${ZOEKVELD}    ${tekst}
-    Click    ${ZOEKKNOP}
+Type text in search field and click search button
+    [Arguments]    ${text}
+    Type Text    ${SEARCH_FIELD}    ${text}
+    Click    ${SEARCH_BUTTON}
