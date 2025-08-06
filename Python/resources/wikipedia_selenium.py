@@ -12,9 +12,9 @@ def check_field_visibility_and_content(browser, css_selector, tekst):
     assert tekst in selector.text
 
 
-def type_text_in_search_field_and_click_search_button(browser, zoekterm):
-    zoekveld_selector = browser.find_element(By.CSS_SELECTOR, search_field)
-    assert zoekveld_selector.is_displayed()
-    zoekveld_selector.send_keys(zoekterm)
-    zoekknop_selector = browser.find_element(By.CSS_SELECTOR, search_button)
-    zoekknop_selector.click()
+def type_text_in_search_field_and_click_search_button(browser, search_term):
+    search_field_selector = browser.find_element(By.CSS_SELECTOR, search_field)
+    assert search_field_selector.is_displayed()
+    search_field_selector.send_keys(search_term)
+    search_button_selector = browser.find_element(By.CSS_SELECTOR, search_button)
+    search_button_selector.click()
