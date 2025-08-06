@@ -10,14 +10,15 @@ Check that I can find the Platypus page on the English Wikipedia
     Log    Go to the English Wikipedia page
     Open browser    https://en.wikipedia.org/wiki/Main_Page    Chrome
     Log    Check that the page is in English
-    Element Should Be Visible   css=h1#Welcome_to_Wikipedia
+    Wait Until Element Is Visible   css=h1#Welcome_to_Wikipedia
     Element Text Should Be   css=h1#Welcome_to_Wikipedia    Welcome to Wikipedia
     Log    Search for the platypus
+    Wait Until Element Is Visible    css=input[aria-label="Search Wikipedia"]
     Input Text     css=input[aria-label="Search Wikipedia"]    Platypus
     Click Button    css=form#searchform button
     Log    Check that the platypus page was found
-    Element Should Be Visible   css=h1.firstHeading > span
-    Element Text Should Be   css=h1.firstHeading > span    Platypus
+    Wait Until Keyword Succeeds    10s    1s   Element Text Should Be     css=h1.firstHeading > span    Platypus
+    Wait Until Element Is Visible   css=h1.firstHeading > span
 
 Check that I can find the Platypus page on the English Wikipedia, now with keywords
     Log    Go to the English Wikipedia page
