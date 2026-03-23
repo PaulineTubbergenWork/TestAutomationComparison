@@ -34,13 +34,6 @@ To run the tests, run
 <code>npm run playwright:tests</code>
 This script is defined in the package.json, you can call it something else if you want. playwright-tests is the script to run the visual testrunner. Run playwright-report if you want to run PlayWright headlessly. The current scripts are only running the file wikipedia.spec.js.
 
-_Installing TestCafe if there is no package.json yet_ \
-<code>npm install testcafe</code>
-
-To run the tests, run
-<code>npm run tc:tests</code>
-This script is defined in the package.json, you can call it something else if you want. This script will run the TestCafe tests visually and will stop running without closing the window so you can debug if a test fails.
-
 **Python Frameworks and RobotFramework versions:**
 
 Python version 3.11, from a venv.
