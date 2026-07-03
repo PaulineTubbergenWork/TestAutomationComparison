@@ -4,6 +4,9 @@
     "cy:run": "cypress run"
   },
   "dependencies": {
-    "cypress": "^15.12.0"
+    "cypress": "^15.18.0"
+  },
+  "allowScripts": {
+    "cypress@15.18.0": true
   }
 }
