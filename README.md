@@ -41,9 +41,6 @@ Python version 3.11, from a venv.
 Pip version 23.3.1, if not up to date: \
 <code>pip install --upgrade pip</code> \
 
-Afterwards open the Python or the RobotFramework folder in the terminal from within the venv, and type the following:
-<code>pip install -r requirements.txt</code>
-
 _Note if using Selenium for Python or RobotFramework_
 
 Download the Chromedriver that fits the version of Chrome on your computer or pipeline, and your operating system and processor:
